@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import dayone.methodref.Order;
 
@@ -52,7 +53,31 @@ public class StreamsExample {
 				 .filter(o->o.getCurrency().equals("EUR"))
 				 .map(Order::getAmount)
 				 .forEach(System.out::println);
+	
 		
+		//Generating Results from Streams - reduce() 
+		double total = listOfNumbers.stream().filter(n->n>10)
+											  .reduce(0, (a,b)->a+b);
+		
+		System.out.println(total);
+		
+		//Order Amount
+		double totalAmount =orderList.stream()
+				 .filter(o->o.getCurrency().equals("EUR"))
+				 .map(Order::getAmount)
+				 .reduce(0.0, (x,y)->x+y);
+		System.out.println(totalAmount);
+		
+		//Other Terminal Functions -- min(),max(),count()
+		double countOfFilteredNumber=listOfNumbers.stream().filter(n->n>10).count();
+		System.out.println(countOfFilteredNumber);
+		
+		System.out.println("************min*********************");
+		System.out.println(orderList.stream().filter(o->o.getCurrency().equals("EUR")).min(Comparator.comparing(Order::getAmount)));
+		System.out.println("************max*********************");
+		System.out.println(orderList.stream().filter(o->o.getCurrency().equals("EUR")).max(Comparator.comparing(Order::getAmount)));
+		
+		IntStream.range(1, 11).forEach(System.out::println);
 	}
 
 }
