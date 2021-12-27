@@ -42,6 +42,15 @@ public class MainApp {
 		//Static method reference example
 		DisplayInformation displ = Order::displayCurrency;
 		displ.display();
+		
+		//Reference to instance method
+		DisplayInformation displayInfo=orderOne::displayAmount;
+		displayInfo.display();
+		
+		//Reference to constructor  
+		OrderAmount orderAmount = Order::new;
+		System.out.println(orderAmount.getOrderAmount(150000));
+		
 	}
 
 }

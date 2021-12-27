@@ -1,4 +1,4 @@
-package dayone.methodref;
+package dayone.functionalinterface;
 
 import java.util.Currency;
 
