@@ -8,6 +8,8 @@ package dayone;
  *
  */
 public class DisplayMainApp {
+	
+	//private static String greetings= "Good Morning";
 
 	/**
 	 * @param args
@@ -22,6 +24,14 @@ public class DisplayMainApp {
 		
 		displayMessage.printMsg();// Calling default method
 		displayMessage.displayMessage("Rakesh"); // Calling an abstract method
+		System.out.println(GreetingsDisplay.greetings);
+		
+		DisplayMessage.printMessage("Sagar"); // calling static method
+		
+		DisplayMessage dispMessage = new DisplayMessageImpl();
+		dispMessage.printMsg();
+				
+		
 	}
 
 }

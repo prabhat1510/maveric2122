@@ -8,6 +8,8 @@ package dayone;
  *
  */
 public class GreetingsDisplay implements DisplayMessage {
+	
+	public static String greetings= "Good Morning";
 
 	public void displayMsg() {
 		System.out.println("I am GreetingDisplay Class");

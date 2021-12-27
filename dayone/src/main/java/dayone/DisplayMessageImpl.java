@@ -20,4 +20,9 @@ public class DisplayMessageImpl implements DisplayMessage {
 		
 	}
 
+	
+	@Override
+	public void printMsg() {
+		System.out.println("I am print Msg from DisplayMessageImpl");
+	}
 }
