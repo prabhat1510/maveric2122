@@ -81,6 +81,8 @@ public class FunctionaInterfaceApp {
 		System.out.println("****Chaining of Comparators**************");
 		Collections.sort(orderList,Comparator.comparing(Order::getAmount).thenComparing(Order::getCurrency));
 		System.out.println(orderList);
+		System.out.println("**********Using Streams*************");
+		betterWayToEvaluatePredicate(orderList,o->o.getAmount()<10000);
 	}
 	
 	static void evaluate(List<Order> orderList,Consumer<Order> consumer) {
@@ -99,5 +101,10 @@ public class FunctionaInterfaceApp {
 			}
 		}
 		return filteredOrder;
+	}
+	
+	static void betterWayToEvaluatePredicate(List<Order> orders,Predicate<Order> predicate) {
+		orders.stream().filter(predicate).forEach(System.out::println);
+
 	}
 }
