@@ -4,8 +4,8 @@
 package dayone.comparator;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -34,10 +34,13 @@ public class EmployeeMainApp {
 		Collections.sort(empList, new SortEmployeeByEmpNo());
 		System.out.println(empList);
 		System.out.println("******************************************");
-		// Collections.reverseOrder(empList,SortEmployeeByEmpNo.class);
-		//Collections.sort(empList, Collections.reverseOrder());
+
 		
-		List<String> empList=Arrays.asList();
+		//Collections.reverse(empList); 
+		//Reverese the employee list on the basis of emp no
+		Collections.sort(empList, Collections.reverseOrder(new SortEmployeeByEmpNo())); 
+		System.out.println(empList);
+		
 	}
 
 }
