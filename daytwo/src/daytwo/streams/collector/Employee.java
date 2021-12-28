@@ -3,6 +3,8 @@
  */
 package daytwo.streams.collector;
 
+import java.util.Optional;
+
 /**
  * @author UD SYSTEMS
  *
@@ -11,6 +13,8 @@ public class Employee {
 	
 	private Integer empId;
 	private String empName;
+	//Aggregation
+	//HAS-A relationship 
 	private Department department;
 	private Double salary;
 	
