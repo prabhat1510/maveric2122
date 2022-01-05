@@ -16,6 +16,9 @@ public class FactoryDemo {
 		}else {
 			System.out.println("This shape can not be drawn");
 		}
+		//this is your normal way to create an object of a class
+		Line line = new Line();
+		line.draw();
 	}
 
 }
