@@ -1,13 +1,14 @@
-package japmavendemo.entities;
+package japmavendemo.entities.bidirectional;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-public class Student {
+@Table(name="student_bi")
+public class StudentBi {
 	@Id
 	private Integer studentId;
 	private String studentName;
@@ -16,7 +17,7 @@ public class Student {
 	//Cascade attribute is mandatory,whenever we apply relationship between object, cascade attribut transfers operations done on one object onto its related child objects.
 	//@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@OneToOne(cascade = CascadeType.ALL)
-	private Address address;
+	private AddressBi addressBi;
 	
 	public Integer getStudentId() {
 		return studentId;
@@ -30,11 +31,11 @@ public class Student {
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-	public Address getAddress() {
-		return address;
+	public AddressBi getAddressBi() {
+		return addressBi;
 	}
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setAddressBi(AddressBi addressBi) {
+		this.addressBi = addressBi;
 	}
 	
 	
