@@ -2,7 +2,10 @@ package japmavendemo.app;
 
 import japmavendemo.dao.EmployeeDAO;
 import japmavendemo.dao.EmployeeDAOImpl;
-import japmavendemo.entities.Employee;
+import japmavendemo.dao.StudentInformationDAOImpl;
+import japmavendemo.dao.StudentInfromationDAO;
+import japmavendemo.entities.Address;
+import japmavendemo.entities.Student;
 
 public class EmployeeMainApp {
 
@@ -33,12 +36,28 @@ public class EmployeeMainApp {
 		
 		//Want to get name of employee whose employee Id is name
 		System.out.println(employeeDao.getEmployeeName(2));
-		
+		/**
 		//Update employee name of a particular employee Id 
 		Employee emp = new Employee();
 		emp.setEmployeeId(1);
 		emp.setEmployeeName("Neethu");
 		employeeDao.updateEmployee(emp);
+		**/
+		
+		System.out.println("***********Student information details added");
+		Address address = new Address();
+		address.setAddressId(1);
+		address.setCity("Bengaluru");
+		address.setPinCode(560093);
+		address.setStreet("Brigade Road");
+		
+		Student student = new Student();
+		student.setStudentId(1);
+		student.setAddress(address);
+		student.setStudentName("Nirav Modi");
+		
+		StudentInfromationDAO studentInfoDao = new StudentInformationDAOImpl();
+		studentInfoDao.addStudentDetails(student);
 	}
 
 }
